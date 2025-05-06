@@ -19,7 +19,21 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-        <h1 class="text-[red]">Hello World!</h1>
+    <body>
+        <nav class="bg-gray-800">
+            <ul class="flex m-0 p-0 list-none overflow-hidden">
+                <li>
+                    <a href="/" class="block text-white text-center px-4 py-3 hover:bg-gray-900">Home</a>
+                </li>
+                <li>
+                    <a href="/about" class="block text-white text-center px-4 py-3 hover:bg-gray-900">About</a>
+                </li>
+                <li>
+                    <a href="/contact" class="block text-white text-center px-4 py-3 hover:bg-gray-900">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        {{$slot}} 
+
     </body>
 </html>
