@@ -25,6 +25,11 @@ Route::get('/jobs', function () {
                 'title' => 'Teacher',
                 'salary'=> '$40,000',
             ],
+            [
+                'id'=> 4,
+                'title' => 'Electrician',
+                'salary'=> '$30,000',
+            ],
         ]
         ]);
 });
@@ -45,6 +50,11 @@ Route::get('/jobs/{id}', function ($id) {
                 'id'=> 3,
                 'title' => 'Teacher',
                 'salary'=> '$40,000',
+            ],
+            [
+                'id'=> 4,
+                'title' => 'Electrician',
+                'salary'=> '$30,000',
             ],
         ];
         $job = Arr::first($jobs, fn($job) => $job['id'] == $id);
