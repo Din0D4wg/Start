@@ -9,17 +9,21 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function ()  {
-    return view ('jobs',[ 
-        'jobs' => Job::all()
+    $jobs = Job::with('employer')->get();
+
+    return view ('jobs',[
+        'jobs' => $jobs
     ]);
 });
 
 Route::get('/jobs/{id}', function ($id)  {
-    $job = Job::findOrFail($id);
-    $employer=$job->employer;
-    return view('job', 
-    ['job' => $job,
-            'employer' => $employer]);
+    $job = Job::with('employer')->findOrFail($id);
+
+    return view('job', [
+        'job' => $job,
+        'employer' => $job->employer,
+    ]);
+
 });
 
 Route::get('/contact', function () {
